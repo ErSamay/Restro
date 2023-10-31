@@ -1,0 +1,71 @@
+<% layout("./layouts/boilerplate") %>
+<h3>Create a New Listing</h3>
+<br><br>
+<div class="row col-8 offset-2" >
+
+    <form action="/items" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div class="mb-3 ">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="Item[title]" placeholder="Dal Bati  , Dhokla , Paw Bhaji" class="form-control" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+        Enter Valid Title
+        </div>
+        
+
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="Item[description]"  cols="30" rows="4" class="form-control" required>
+
+        </textarea> 
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+        Enter Valid Title
+        </div>
+        
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price </label>
+        <input type="text" name="Item[price]" placeholder="1200"  class="form-control" required>
+        <div class="valid-feedback">
+          Valid Amount!
+        </div>
+        <div class="invalid-feedback">
+        Enter Valid Amount
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload listing Image</label>
+        <input type="file" name="Item[image]" class="form-control">
+      </div>
+      <div>
+        <label for="Famous_In" class="form-label">Famous_In</label>
+        <input type="text" name="Item[Famous_In]"  placeholder="Punjab"  class="form-control" required>
+        <div class="valid-feedback">
+         Absolutely Correct
+        </div>
+        <div class="invalid-feedback">
+        Not Perfect
+        </div>
+   
+      </div>
+      <div class="mb-3">
+        <label for="About_Taste" class="form-label">About_Taste</label>
+        <input type="text" name="Item[About_Taste]" placeholder="Spicy"  class="form-control" required>
+        <div class="valid-feedback">
+         Good In Taste
+         </div>
+         <div class="invalid-feedback">
+       So Bad..
+         </div>
+  
+      </div>
+  
+        <button class="btn btn-dark add-btn">Submit</button>
+    </form> 
+</div>

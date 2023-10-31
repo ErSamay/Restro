@@ -1,0 +1,135 @@
+
+@font-face {
+    font-family: head !important;
+    src: url(./PlaypenSans-VariableFont_wght.ttf) !important;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    display: flex;
+    flex-direction:column ;
+    min-height: 100vh;
+
+}
+
+.container{
+flex: 1;
+}
+
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.ri-shopping-cart-fill{
+    color: brown;
+}
+.navbar-nav .nav-link{
+    color: rgb(225, 87, 87);
+    font-weight: 900;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: rgb(82, 75, 75);
+    font-weight: 800;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links{
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+.f-info-socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+}
+.f-info-socials i{
+    font-size: 1.4rem;
+}
+.f-info{
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 8rem;
+    background-color: aliceblue;
+}
+.cont{
+    margin-top: 0.4rem;
+    letter-spacing: 3px;
+}
+
+.card{
+    margin-top: 2%;
+    margin-left: 30%;
+    border: none;
+}
+.card img{
+    border-radius: 20px;
+    object-fit: cover;
+    width: 100%;
+}
+.card-body {
+padding: 0.3rem;
+}
+.card-text {
+    font-family: head !important;
+}
+a{
+    text-decoration: none;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.add-btn{
+    background-color: #fe424d;
+    border: none;
+}
+
+.show-img{
+    height: 60vh;
+    object-fit: cover;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+.image h1{
+    margin-left: 20%;
+}
+.image .img-home{
+    margin-left: 25%;
+width: 100vh;
+}
+.row .h3{
+    margin-top: 10px;
+    margin-left: 60px;
+}
+.cards{
+    border: 0.6px solid black;
+    border-radius: 20px;
+}

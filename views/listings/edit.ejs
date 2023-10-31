@@ -1,0 +1,71 @@
+
+<% layout("./layouts/boilerplate") %>
+<h1>Edit The Content</h1>
+<br><br>
+
+<div class="row col-8 offset-2" >
+    <form action="/items/<%= item._id %>?_method=PUT" method="post" novalidate class="needs-validation">
+        <div class="mb-3 ">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="Item[title]" value="<%= item.title %>" class="form-control" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+              Enter Valid Title
+              </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="Item[description]"  cols="30" rows="4" class="form-control" required><%= item.description %>  
+            </textarea>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+              Enter Valid Title
+              </div>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price </label>
+            <input type="number" name="Item[price]" value="<%= item.price %>" class="form-control" required >
+            <div class="valid-feedback">
+                Valid Amount!
+              </div>
+              <div class="invalid-feedback">
+              Enter Valid Amount
+              </div>
+          
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="text" name=" Item[image]" value="<%= item.image %>" class="form-control" required >
+
+        </div>
+        <div class="mb-3">
+            <label for="Famous_In" class="form-label">Famous_In</label>
+            <input type="text" name="Item[Famous_In]"  value="<%= item.Famous_In %>" class="form-control" required>
+            <div class="valid-feedback">
+                Absolutely Correct
+               </div>
+               <div class="invalid-feedback">
+               Not Perfect
+               </div>
+        </div>
+        <div class="mb-3">
+            <label for="About_Taste" class="form-label">About_Taste</label>
+            <input type="text" name="Item[About_Taste]" 
+            value="<%= item.About_Taste %>"  class="form-control"required >
+            <div class="valid-feedback">
+                Good In Taste
+                </div>
+                <div class="invalid-feedback">
+              So Bad..
+                </div>
+        </div>
+        <br><br>
+        <button class="btn btn-dark add-btn">Submit</button>
+        <br><br>
+    </form>
+
+</div>
