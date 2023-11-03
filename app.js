@@ -2,8 +2,6 @@ if(process.env_Node_ENV != "production"){
     require('dotenv').config()
 }
 
-console.log(process.env.SECRET);
-
 
 const express  = require("express");
 const app = express();
@@ -13,6 +11,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const session = require("express-session")
+const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
 const passport = require("passport")
 const LocalStrategy = require("passport-local");
@@ -22,18 +21,21 @@ const reviewRouter = require("./routes/review.js")
 const userRouter = require("./routes/user.js");
 const { func } = require('joi');
 
-const dbUrl = process.env.ATLASDB_URL;
 
+const MONGO_URL = "mongodb+srv://raksha:raksha123@cluster0.9isff6a.mongodb.net/?retryWrites=true&w=majority"
 
-main().then((res) => {
-    console.log("db is working")
-}).catch((err) => {
+main()
+  .then(() => {
+    console.log("connection successfull");
+  })
+  .catch((err) => {
     console.log(err);
-})
+  });
 
-async function main(){
-   await mongoose.connect(dbUrl);
+async function main() {
+  await mongoose.connect(MONGO_URL);
 }
+
 
 
 app.set("view engine" , "ejs");
@@ -42,6 +44,20 @@ app.use(express.urlencoded({extended : true}));
 app.use(express.static("./public"))
 app.use(methodOverride("_method"))
 app.engine('ejs', engine);
+
+
+const store = MongoStore.create({
+    mongoUrl : MONGO_URL , 
+    crypto :{
+      secret : process.env.SECRET, 
+    },
+    touchAfter : 24 * 3600
+  })
+  
+  store.on("error" , () => {
+    console.log("Error in Mongo Store" , err);
+  });
+
 
 const sessionOptions = {
     secret : "mysupersecretcode" , 

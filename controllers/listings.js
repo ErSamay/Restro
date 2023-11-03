@@ -24,7 +24,7 @@ module.exports.renderNewForm = (req , res) => {
      res.redirect("/items");
  
  }
- console.log(item);
+//  console.log(item);
     res.render("./listings/show.ejs" , {item});
  }
 
